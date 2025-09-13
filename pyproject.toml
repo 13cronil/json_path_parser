@@ -7,8 +7,21 @@ authors = [
     { name = "13cronil", email = "lukecronin1228@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "lark-parser>=0.12.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.8.13,<0.9.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
+
+[tool.ruff]
+select = ["ALL"]
+ignore = [
+    "D100"
+]
