@@ -1,6 +1,6 @@
 from .logger import logger
 from .parser import create_parser
-# from .transformer import JSONTransformer
+from .transformer import JSONPathTransformer
 
 
 from lark import Lark, Tree, Token, Transformer
@@ -63,14 +63,14 @@ class InspectorTransformer(Transformer):
 def main():
     try:
         parser = create_parser()
-        sample_json_path = r"$.store.book[*].title"
+        sample_json_path = r"$.store.book[1:2].title"
         parse_tree = parser.parse(sample_json_path)
-        logger.info(parse_tree.pretty())
+        # logger.info(parse_tree.pretty())
 
-        # Test 2: Array index
         inspector = InspectorTransformer()
-        result = inspector.transform(parse_tree)
-        logger.info(result)
+        json_transformer = JSONPathTransformer()
+        result = json_transformer.transform(parse_tree)
+        logger.info(f"Result is {result}")
     except Exception as e:
         logger.error("An error occurred while parsing JSON.", exc_info=e)
         raise

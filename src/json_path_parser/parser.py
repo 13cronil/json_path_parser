@@ -2,7 +2,14 @@ from lark import Lark
 
 
 def create_parser() -> Lark:
-    """Create and return a JSON parser using Lark."""
+    """Create and return a JSON parser using Lark.
+
+    This parser is designed to parse JSONPath expressions.
+
+    Returns:
+        Lark: A Lark parser instance configured for JSONPath.
+
+    """
     grammar = r"""
         ?start: root
 
@@ -17,18 +24,18 @@ def create_parser() -> Lark:
         bracket_selector: "[" bracketed_content "]"
 
         ?bracketed_content: integer                   -> index
-                        | slice                       -> slice
+                        | slice
                         | "*"                         -> wildcard_index
                         | int_index_list              -> index_list
                         | string                      -> name
 
         recursive_selector: ".." (CNAME | "*" | bracket_selector)?
 
-        slice: integer? ":" integer? (":" integer?)?
+        ?slice: integer? ":" integer? (":" integer?)?
         int_index_list: integer ("," integer)*
 
         string : ESCAPED_STRING | SINGLE_QUOTED_STRING
-        integer : SIGNED_INT
+        ?integer : SIGNED_INT
 
 
         SINGLE_QUOTED_STRING : /'([^'\\]*(\\.[^'\\]*)*)'/
