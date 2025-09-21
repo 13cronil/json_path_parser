@@ -1,0 +1,146 @@
+{
+  "store": {
+    "book": [
+      {
+        "category": "reference",
+        "author": "Nigel Rees",
+        "title": "Sayings of the Century",
+        "price": 8.95,
+        "isbn": "0-553-21311-3",
+        "available": true,
+        "tags": ["quotes", "wisdom", "history"],
+        "metadata": {
+          "publisher": "Bantam",
+          "year": 1988,
+          "pages": 176
+        }
+      },
+      {
+        "category": "fiction",
+        "author": "Evelyn Waugh",
+        "title": "Sword of Honour",
+        "price": 12.99,
+        "isbn": "0-679-43136-5",
+        "available": false,
+        "tags": ["war", "fiction", "classic"],
+        "metadata": {
+          "publisher": "Random House",
+          "year": 1965,
+          "pages": 864
+        }
+      },
+      {
+        "category": "fiction",
+        "author": "Herman Melville",
+        "title": "Moby Dick",
+        "price": 8.99,
+        "isbn": "0-553-21311-3",
+        "available": true,
+        "tags": ["adventure", "classic", "sea"],
+        "metadata": {
+          "publisher": "Bantam",
+          "year": 1851,
+          "pages": 635
+        }
+      },
+      {
+        "category": "fiction",
+        "author": "J. R. R. Tolkien",
+        "title": "The Lord of the Rings",
+        "price": 22.99,
+        "isbn": "0-395-19395-8",
+        "available": true,
+        "tags": ["fantasy", "epic", "adventure"],
+        "metadata": {
+          "publisher": "Houghton Mifflin",
+          "year": 1954,
+          "pages": 1216
+        }
+      }
+    ],
+    "bicycle": {
+      "color": "red",
+      "price": 19.95,
+      "available": true,
+      "specifications": {
+        "frame": "aluminum",
+        "wheels": 26,
+        "gears": 21,
+        "brand": "Trek"
+      }
+    },
+    "electronics": [
+      {
+        "type": "laptop",
+        "brand": "Apple",
+        "model": "MacBook Pro",
+        "price": 1299.99,
+        "specs": {
+          "cpu": "M2",
+          "ram": "16GB",
+          "storage": "512GB SSD"
+        },
+        "in_stock": true
+      },
+      {
+        "type": "phone",
+        "brand": "Samsung",
+        "model": "Galaxy S23",
+        "price": 799.99,
+        "specs": {
+          "cpu": "Snapdragon 8 Gen 2",
+          "ram": "8GB",
+          "storage": "256GB"
+        },
+        "in_stock": false
+      }
+    ]
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "age": 28,
+      "preferences": {
+        "categories": ["fiction", "technology"],
+        "max_price": 25.00,
+        "newsletter": true
+      },
+      "purchase_history": [
+        {"item": "Moby Dick", "date": "2023-01-15", "price": 8.99},
+        {"item": "MacBook Pro", "date": "2023-02-20", "price": 1299.99}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "age": 34,
+      "preferences": {
+        "categories": ["reference", "history"],
+        "max_price": 15.00,
+        "newsletter": false
+      },
+      "purchase_history": [
+        {"item": "Sayings of the Century", "date": "2023-01-10", "price": 8.95}
+      ]
+    }
+  ],
+  "config": {
+    "store_name": "Books & More",
+    "currency": "USD",
+    "tax_rate": 0.08,
+    "shipping": {
+      "free_threshold": 50.00,
+      "standard_rate": 5.99,
+      "express_rate": 12.99
+    },
+    "special-key": "value with spaces",
+    "api_endpoints": {
+      "books": "/api/v1/books",
+      "users": "/api/v1/users",
+      "orders": "/api/v1/orders"
+    }
+  }
+}
